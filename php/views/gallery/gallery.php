@@ -41,31 +41,31 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
+                    <div class="custom-select-box">
                         <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-							<option>¥ JPY</option>
-							<option>$ USD</option>
-							<option>€ EUR</option>
-						</select>
+                            <option>¥ JPY</option>
+                            <option>$ USD</option>
+                            <option>€ EUR</option>
+                        </select>
                     </div>
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +11 900 800 100</a></p>
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li><a href="?controller=myAccount"><i class="fa fa-user s_color"></i> My Account</a></li>
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            <li><a href="?controller=contactUs"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Register Here</option>
-							<option>Sign In</option>
-						</select>
-					</div>
+                    <div class="login-box">
+                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+                            <option>Register Here</option>
+                            <option>Sign In</option>
+                        </select>
+                    </div>
                     <div class="text-slid-box">
                         <div id="offer-box" class="carouselTicker">
                             <ul class="offer-box">
@@ -91,7 +91,7 @@
                                     <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
                                 </li>
                                 <li>
-                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now 
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
                                 </li>
                             </ul>
                         </div>
@@ -110,30 +110,30 @@
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                        <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="?controller=about">About Us</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.html">Sidebar Shop</a></li>
-								<li><a href="shop-detail.html">Shop Detail</a></li>
-                                <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="?controller=shop">Sidebar Shop</a></li>
+                                <li><a href="?controller=shop&action=shopDetail">Shop Detail</a></li>
+                                <li><a href="?controller=shop&action=cart">Cart</a></li>
+                                <li><a href="?controller=shop&action=checkout">Checkout</a></li>
+                                <li><a href="?controller=myAccount">My Account</a></li>
+                                <li><a href="?controller=shop&action=wishlist">Wishlist</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="?controller=gallery">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="?controller=contactUs">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -142,13 +142,11 @@
                 <div class="attr-nav">
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-                        <li class="side-menu">
-							<a href="#">
-								<i class="fa fa-shopping-bag"></i>
-								<span class="badge">3</span>
-								<p>My Cart</p>
-							</a>
-						</li>
+                        <li class="side-menu"><a href="#">
+                                <i class="fa fa-shopping-bag"></i>
+                                <span class="badge">3</span>
+                                <p>My Cart</p>
+                            </a></li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
@@ -198,104 +196,29 @@
     </div>
     <!-- End Top Search -->
 
-    <!-- Start Slider -->
-    <div id="slides-shop" class="cover-slides">
-        <ul class="slides-container">
-            <li class="text-center">
-                <img src="images/banner-01.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/banner-02.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/banner-03.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
-    </div>
-    <!-- End Slider -->
-
-    <!-- Start Categories  -->
-    <div class="categories-shop">
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
+                <div class="col-lg-12">
+                    <h2>Services</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Services</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Categories -->
-	
-	<div class="box-add-products">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="images/add-img-01.jpg" alt="" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="images/add-img-02.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- End All Title Box -->
 
-    <!-- Start Products  -->
+    <!-- Start Gallery  -->
     <div class="products-box">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Fruits & Vegetables</h1>
+                        <h1>Our Gallery</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
                     </div>
                 </div>
@@ -305,21 +228,23 @@
                     <div class="special-menu text-center">
                         <div class="button-group filter-button-group">
                             <button class="active" data-filter="*">All</button>
-                            <button data-filter=".top-featured">Top featured</button>
-                            <button data-filter=".best-seller">Best seller</button>
+                            <button data-filter=".bulbs">Bulbs</button>
+                            <button data-filter=".fruits">Fruits</button>
+                            <button data-filter=".podded-vegetables">Podded vegetables</button>
+                            <button data-filter=".root-and-tuberous">Root and tuberous</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="row special-list">
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <div class="col-lg-3 col-md-6 special-grid bulbs">
                     <div class="products-single fix">
                         <div class="box-img-hover">
                             <div class="type-lb">
                                 <p class="sale">Sale</p>
                             </div>
-                            <img src="images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                            <img src="images/gallery-img-01.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
@@ -328,158 +253,177 @@
                                 </ul>
                                 <a class="cart" href="#">Add to Cart</a>
                             </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $7.79</h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                <div class="col-lg-3 col-md-6 special-grid fruits">
                     <div class="products-single fix">
                         <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="new">New</p>
-                            </div>
-                            <img src="images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                            <img src="images/gallery-img-02.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
                             </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $9.79</h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid top-featured">
+                <div class="col-lg-3 col-md-6 special-grid bulbs">
                     <div class="products-single fix">
                         <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                            <img src="images/gallery-img-03.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
                             </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $10.79</h5>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                <div class="col-lg-3 col-md-6 special-grid fruits">
                     <div class="products-single fix">
                         <div class="box-img-hover">
-                            <div class="type-lb">
-                                <p class="sale">Sale</p>
-                            </div>
-                            <img src="images/img-pro-04.jpg" class="img-fluid" alt="Image">
+                            <img src="images/gallery-img-04.jpg" class="img-fluid" alt="Image">
                             <div class="mask-icon">
                                 <ul>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                     <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                 </ul>
-                                <a class="cart" href="#">Add to Cart</a>
                             </div>
                         </div>
-                        <div class="why-text">
-                            <h4>Lorem ipsum dolor sit amet</h4>
-                            <h5> $15.79</h5>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 special-grid bulbs">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-05.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid fruits">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-06.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-07.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid root-and-tuberous">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-08.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid root-and-tuberous">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-09.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-10.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid root-and-tuberous">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-11.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 special-grid podded-vegetables">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <img src="images/gallery-img-12.jpg" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Products  -->
-
-    <!-- Start Blog  -->
-    <div class="latest-blog">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>latest blog</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="images/blog-img.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="images/blog-img-01.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                    <div class="blog-box">
-                        <div class="blog-img">
-                            <img class="img-fluid" src="images/blog-img-02.jpg" alt="" />
-                        </div>
-                        <div class="blog-content">
-                            <div class="title-blog">
-                                <h3>Fusce in augue non nisi fringilla</h3>
-                                <p>Nulla ut urna egestas, porta libero id, suscipit orci. Quisque in lectus sit amet urna dignissim feugiat. Mauris molestie egestas pharetra. Ut finibus cursus nunc sed mollis. Praesent laoreet lacinia elit id lobortis.</p>
-                            </div>
-                            <ul class="option-blog">
-                                <li><a href="#"><i class="far fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#"><i class="far fa-comments"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Blog  -->
-
+    <!-- End Gallery  -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -573,32 +517,34 @@
     <footer>
         <div class="footer-main">
             <div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Business Time</h3>
-							<ul class="list-time">
-								<li>Monday - Friday: 08.00am to 05.00pm</li> <li>Saturday: 10.00am to 08.00pm</li> <li>Sunday: <span>Closed</span></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Newsletter</h3>
-							<form class="newsletter-box">
-								<div class="form-group">
-									<input class="" type="email" name="Email" placeholder="Email Address*" />
-									<i class="fa fa-envelope"></i>
-								</div>
-								<button class="btn hvr-hover" type="submit">Submit</button>
-							</form>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-12 col-sm-12">
-						<div class="footer-top-box">
-							<h3>Social Media</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							<ul>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Business Time</h3>
+                            <ul class="list-time">
+                                <li>Monday - Friday: 08.00am to 05.00pm</li>
+                                <li>Saturday: 10.00am to 08.00pm</li>
+                                <li>Sunday: <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Newsletter</h3>
+                            <form class="newsletter-box">
+                                <div class="form-group">
+                                    <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <button class="btn hvr-hover" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Social Media</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
@@ -607,16 +553,16 @@
                                 <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
-						</div>
-					</div>
-				</div>
-				<hr>
+                        </div>
+                    </div>
+                </div>
+                <hr>
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>About Freshshop</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p> 							
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
@@ -657,7 +603,8 @@
     <!-- Start copyright  -->
     <div class="footer-copyright">
         <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">ThewayShop</a> Design By :
-            <a href="https://html.design/">html design</a></p>
+            <a href="https://html.design/">html design</a>
+        </p>
     </div>
     <!-- End copyright  -->
 
