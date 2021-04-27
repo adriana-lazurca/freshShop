@@ -1,4 +1,4 @@
 <?php
-require_once './php/init.php';
+require_once './php/core/Router.php';
 
-$app = new App;
+$router = new Router;

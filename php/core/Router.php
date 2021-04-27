@@ -1,5 +1,7 @@
 <?php
-class App
+require_once 'Controller.php';
+
+class Router
 {
     public function __construct()
     {
@@ -19,9 +21,6 @@ class App
         $controller = new $controllerName();
 
         call_user_func_array(array($controller, $actionName), $params);
-
-        $controller = new Shop();
-        $controller->shopDetail(1);
     }
 
     private function GetParams(array $arr)
