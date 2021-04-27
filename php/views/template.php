@@ -1,3 +1,9 @@
+<?php
+$controller = isset($_GET["controller"])
+    ? $_GET["controller"]
+    : "home";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -119,9 +125,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?controller=about">About Us</a></li>
-                    <li class="dropdown">
+                    <li class="nav-item <?= $controller == 'home' ? 'active' : '' ?>"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item <?= $controller == 'about' ? 'active' : '' ?>"><a class="nav-link" href="?controller=about">About Us</a></li>
+                    <li class="dropdown <?= $controller == 'shop' || $controller == 'myAccount' ? 'active' : '' ?>">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
                             <li><a href="?controller=shop">Sidebar Shop</a></li>
@@ -132,8 +138,8 @@
                             <li><a href="?controller=shop&action=wishlist">Wishlist</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="?controller=gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="?controller=contactUs">Contact Us</a></li>
+                    <li class="nav-item <?= $controller == 'gallery' ? 'active' : '' ?>"><a class="nav-link" href="?controller=gallery">Gallery</a></li>
+                    <li class="nav-item <?= $controller == 'contactUs' ? 'active' : '' ?>"><a class="nav-link" href="?controller=contactUs">Contact Us</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -196,21 +202,6 @@
 </div>
 <!-- End Top Search -->
 
-<!-- Start All Title Box -->
-<div class="all-title-box">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>ABOUT US</h2>
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item <?= true ? 'active' : '' ?>">ABOUT US</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End All Title Box -->
 
 <body>
 
