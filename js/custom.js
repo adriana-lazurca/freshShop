@@ -90,7 +90,7 @@
 	   ................................................. */
 
 	$('.offer-box').inewsticker({
-		speed: 3000,
+		speed: 1000,
 		effect: 'fade',
 		dir: 'ltr',
 		font_size: 13,
