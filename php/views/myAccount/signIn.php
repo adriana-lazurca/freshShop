@@ -2,23 +2,27 @@
 
 <?php ob_start(); ?>
 
-<!-- Start All Title Box -->
-<div class="all-title-box">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2>SIGN IN</h2>
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item">ABOUT US</li>
-                </ul>
-            </div>
+
+<h2 class='text-center mt-5'>SIGN IN</h2>
+
+<div class='container'>
+    <div class='row'>
+        <div class='col-6 mt-5 mb-5 mx-auto'>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </form>
+            <p class='text-center mt-4'>You don't have an account yet? Please register <a href="?controller=myAccount&action=register"><b>here</b></a></p>
         </div>
     </div>
 </div>
-<!-- End All Title Box -->
-
-<h1>Mon sign in !</h1>
 
 
 <?php $content = ob_get_clean(); ?>
