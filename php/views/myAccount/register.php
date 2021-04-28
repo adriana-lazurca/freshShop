@@ -2,27 +2,39 @@
 
 <?php ob_start(); ?>
 
-<h2 class='text-center mt-5'>REGISTER</h2>
+<h2 class='text-center mt-5 font-weight-bold'>REGISTER</h2>
 
 <div class='container'>
     <div class='row'>
         <div class='col-6 mt-5 mb-5 mx-auto'>
-            <form action="" method="post">
+
+            <?php if (isset($message)) { ?>
+                <div class="alert alert-danger">
+                    <strong><?= $message ?></strong>
+                </div>
+            <?php
+            } ?>
+
+            <form action="?controller=myAccount&action=validateUserRegistration" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" required autocomplete="off">
+                </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input type="email" class="form-control" name="email" required autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" required>
+                    <input type="password" class="form-control" name="password" required autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="password">Retype Password</label>
-                    <input type="password" class="form-control" id="password" required>
+                    <input type="password" class="form-control" name="rePassword" required autocomplete="off">
                 </div>
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-success">Register</button>
             </form>
-            <p class='text-center mt-4'>You already have an account? Please sign in <a href="?controller=myAccount&action=signIn"><b>here</b></a></p>
+            <p class='text-center mt-4 font-italic'>You already have an account? Please sign in <a href="?controller=myAccount&action=signIn"><b>here</b></a></p>
         </div>
     </div>
 </div>

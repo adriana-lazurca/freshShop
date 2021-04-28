@@ -1,5 +1,6 @@
 <?php
 require_once 'Controller.php';
+session_start();
 
 class Router
 {
@@ -12,7 +13,6 @@ class Router
         $actionName = isset($_GET["action"])
             ? $_GET["action"]
             : "index";
-
 
         $params = array_merge($this->GetParams($_GET), $this->GetParams($_POST));
 
