@@ -1,5 +1,7 @@
 <?php
 require_once './php/models/UserManager.php';
+require_once './php/models/User.php';
+
 class MyAccount extends Controller
 {
     public function index()
@@ -50,20 +52,38 @@ class MyAccount extends Controller
 
     public function validateUserSignIn(string $email, string $password)
     {
-        // $userExists = checkUserExists($email, $password);
-        $userExists = true;
+        $userManager = new UserManager;
 
-        if ($userExists) {
-            $_SESSION["email"] = $email;
+        $userExists = $userManager->checkUserExists($email);
+        $userData = $userManager->getUser($email);
+
+        $isPasswordOk = password_verify($password, $userData['password']);
+
+        if ($userExists && $isPasswordOk) {
+            $user = new User;
+
+            $user->id = $userData['id'];
+            $user->firstName = $userData['first_name'];
+            $user->lastName = $userData['last_name'];
+            $user->email = $userData['email'];
+            $user->password = $userData['password'];
+
+            $_SESSION['user'] = $user;
+
             header('Location: index.php');
         } else {
             header('Location: ?controller=myAccount&action=signIn&error');
         }
     }
 
-    public function validateUserRegistration(string $firstName, string $lastName, string $email, string $password, string $rePassword)
-    {
-        $allFieldsAreFilled = false;
+    public function validateUserRegistration(
+        string $firstName,
+        string $lastName,
+        string $email,
+        string $password,
+        string $rePassword
+    ) {
+        $allFieldsAreFilled = !empty($firstName) && !empty($lastName) && !empty($email) && !empty($password) && !empty($rePassword);
 
         if (!$allFieldsAreFilled) {
             $error = "empty";
@@ -91,11 +111,15 @@ class MyAccount extends Controller
             return;
         }
 
+        $cost = ['cost' => 12];
+        $password = password_hash($password, PASSWORD_BCRYPT, $cost);
+
         $userManager->insertUser($firstName, $lastName, $email, $password);
 
-        $_SESSION["email"] = $email;
-        $_SESSION["firstName"] = $firstName;
-        $_SESSION["lastName"] = $lastName;
+        // $_SESSION["email"] = $email;
+        // $_SESSION["firstName"] = $firstName;
+        // $_SESSION["lastName"] = $lastName;
+
         header('Location: ?controller=myAccount&action=signIn');
     }
 }

@@ -18,23 +18,23 @@
             <form action="?controller=myAccount&action=validateUserRegistration" method="post">
                 <div class="form-group">
                     <label for="firstName">First name</label>
-                    <input type="text" class="form-control" name="firstName" autocomplete="off">
+                    <input type="text" class="form-control" name="firstName" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last name</label>
-                    <input type="text" class="form-control" name="lastName" autocomplete="off">
+                    <input type="text" class="form-control" name="lastName" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" name="email" autocomplete="off">
+                    <input type="email" class="form-control" name="email" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" autocomplete="off">
+                    <input type="password" class="form-control" name="password" autocomplete="off" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Retype Password</label>
-                    <input type="password" class="form-control" name="rePassword" autocomplete="off">
+                    <input type="password" class="form-control" name="rePassword" autocomplete="off" required>
                 </div>
                 <button type="submit" class="btn btn-success">Register</button>
             </form>

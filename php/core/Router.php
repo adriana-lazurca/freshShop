@@ -1,5 +1,6 @@
 <?php
-require_once 'Controller.php';
+require_once 'php/core/Controller.php';
+require_once 'php/models/User.php';
 session_start();
 
 class Router

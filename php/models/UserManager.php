@@ -13,14 +13,26 @@ class UserManager extends Manager
         $users->execute(array($firstName, $lastName, $email, $password));
     }
 
-    function checkUserExists($email) {
+    function checkUserExists($email)
+    {
         $db = $this->dbConnect();
-    
-        $request = $db->query("SELECT email FROM users WHERE email = '$email' ");
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $request = $db->query($sql);
         
         $affectedRows = $request->rowCount();
         $userExists = $affectedRows > 0;
-    
+        
         return $userExists;
+    }
+
+    function getUser($email)
+    {
+        $db = $this->dbConnect();
+        $sql = "SELECT id, first_name, last_name, email, password FROM users WHERE email = '$email'";
+        $request = $db->query($sql);
+        
+        $userData = $request->fetch();
+                
+        return $userData;
     }
 }
