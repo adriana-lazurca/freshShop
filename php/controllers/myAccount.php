@@ -1,5 +1,5 @@
 <?php
-
+require_once './php/models/UserManager.php';
 class MyAccount extends Controller
 {
     public function index()
@@ -32,6 +32,10 @@ class MyAccount extends Controller
             case 'already':
                 $message = "You are already registered";
                 break;
+
+            case 'empty':
+                $message = "Fill all the fields";
+                break;
         }
 
         // //alternative
@@ -57,35 +61,41 @@ class MyAccount extends Controller
         }
     }
 
-    public function validateUserRegistration(string $firstName, string $lastName, string $username, string $email, string $password, string $rePassword)
+    public function validateUserRegistration(string $firstName, string $lastName, string $email, string $password, string $rePassword)
     {
-        // $userExists = checkUserExists($username, $password);
-        $registrationIsFilled = false;
+        $allFieldsAreFilled = false;
 
-        $userExists = false;
-
-        if ($password != $rePassword) {
-            $error = "password";
-        }
-
-        $isEmailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
-        if (!$isEmailValid) {
-            $error = "email";
-        }
-
-        if ($userExists) {
-            $error = "already";
-        }
-
-        if ($registrationIsFilled) {
-            $_SESSION["username"] = $username;
-            $_SESSION["email"] = $email;
-            $_SESSION["firstName"] = $firstName;
-            $_SESSION["lastName"] = $lastName;
-            
-            header('Location: ?controller=myAccount&action=signIn');
+        if (!$allFieldsAreFilled) {
+            $error = "empty";
         } else {
-            header("Location: ?controller=myAccount&action=register&error=$error");
+            $userManager = new UserManager;
+            $userExists = $userManager->checkUserExists($email);
+
+            if ($userExists) {
+                $error = "already";
+            } else {
+                if ($password != $rePassword) {
+                    $error = "password";
+                } else {
+                    $isEmailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+                    if (!$isEmailValid) {
+                        $error = "password";
+                    }
+                }
+            }
         }
+
+        if (isset($error)) {
+            header("Location: ?controller=myAccount&action=register&error=$error");
+            return;
+        }
+
+        $userManager->insertUser($firstName, $lastName, $email, $password);
+
+        $_SESSION["email"] = $email;
+        $_SESSION["firstName"] = $firstName;
+        $_SESSION["lastName"] = $lastName;
+        header('Location: ?controller=myAccount&action=signIn');
     }
 }

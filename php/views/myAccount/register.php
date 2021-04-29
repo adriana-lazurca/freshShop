@@ -18,27 +18,23 @@
             <form action="?controller=myAccount&action=validateUserRegistration" method="post">
                 <div class="form-group">
                     <label for="firstName">First name</label>
-                    <input type="text" class="form-control" name="firstName" required autocomplete="off">
+                    <input type="text" class="form-control" name="firstName" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last name</label>
-                    <input type="text" class="form-control" name="lastName" required autocomplete="off">
-                </div>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" name="username" required autocomplete="off">
+                    <input type="text" class="form-control" name="lastName" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="email">Email address</label>
-                    <input type="email" class="form-control" name="email" required autocomplete="off">
+                    <input type="email" class="form-control" name="email" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" name="password" required autocomplete="off">
+                    <input type="password" class="form-control" name="password" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <label for="password">Retype Password</label>
-                    <input type="password" class="form-control" name="rePassword" required autocomplete="off">
+                    <input type="password" class="form-control" name="rePassword" autocomplete="off">
                 </div>
                 <button type="submit" class="btn btn-success">Register</button>
             </form>
