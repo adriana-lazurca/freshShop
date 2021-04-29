@@ -17,6 +17,14 @@
 
             <form action="?controller=myAccount&action=validateUserRegistration" method="post">
                 <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text" class="form-control" name="firstName" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" class="form-control" name="lastName" required autocomplete="off">
+                </div>
+                <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" name="username" required autocomplete="off">
                 </div>

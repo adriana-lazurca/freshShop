@@ -66,9 +66,14 @@ $controller = isset($_GET["controller"])
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="login-box">
                     <select id="registration" class="selectpicker show-tick form-control" data-selected-text-format="count > 1" onchange="location = this.options[this.selectedIndex].value;">
-                        <option value="">Account</option>
-                        <option value="?controller=myAccount&action=signIn">Sign In</option>
-                        <option value="?controller=myAccount&action=register">Register Here</option>
+                        <?php if (!isset($_SESSION['email'])) { ?>
+                            <option value="">Account</option>
+                            <option value="?controller=myAccount&action=signIn">Sign In</option>
+                            <option value="?controller=myAccount&action=register">Register Here</option>
+                        <?php } else { ?>
+                            <option value=""><?= $_SESSION['email'] ?></option>
+                            <option value="?controller=myAccount&action=signOut">Sign Out</option>
+                        <?php } ?>
                     </select>
                 </div>
 

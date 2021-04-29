@@ -12,15 +12,15 @@
 
                 <?php if (isset($error)) { ?>
                     <div class="alert alert-danger">
-                        <strong>Your username or password is incorrect.</strong>
+                        <strong>Your email or password is incorrect.</strong>
                     </div>
                 <?php
                 } ?>
 
-                <form action="?controller=myAccount&action=validateUser" method="post">
+                <form action="?controller=myAccount&action=validateUserSignIn" method="post">
                     <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" name="username" required autocomplete="off">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" required autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
