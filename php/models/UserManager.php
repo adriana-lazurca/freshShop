@@ -18,10 +18,10 @@ class UserManager extends Manager
         $db = $this->dbConnect();
         $sql = "SELECT * FROM users WHERE email = '$email'";
         $request = $db->query($sql);
-        
+
         $affectedRows = $request->rowCount();
         $userExists = $affectedRows > 0;
-        
+
         return $userExists;
     }
 
@@ -30,9 +30,9 @@ class UserManager extends Manager
         $db = $this->dbConnect();
         $sql = "SELECT id, first_name, last_name, email, password FROM users WHERE email = '$email'";
         $request = $db->query($sql);
-        
+
         $userData = $request->fetch();
-                
+
         return $userData;
     }
 }

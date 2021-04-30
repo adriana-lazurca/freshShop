@@ -4,6 +4,11 @@ class Shop extends Controller
 {
     public function index()
     {
+        require_once "./php/models/ProductManager.php";
+        
+        $productManager = new ProductManager;
+        $products = $productManager->getProducts();
+
         require_once "./php/views/shop/shop.php";
     }
 

@@ -54,12 +54,13 @@ class MyAccount extends Controller
     {
         $userManager = new UserManager;
 
-        $userExists = $userManager->checkUserExists($email);
         $userData = $userManager->getUser($email);
 
-        $isPasswordOk = password_verify($password, $userData['password']);
+        $dbPassword = $userData == false ? "" : $userData['password'];
 
-        if ($userExists && $isPasswordOk) {
+        $isPasswordOk = password_verify($password, $dbPassword);
+
+        if ($isPasswordOk) {
             $user = new User;
 
             $user->id = $userData['id'];
@@ -115,10 +116,6 @@ class MyAccount extends Controller
         $password = password_hash($password, PASSWORD_BCRYPT, $cost);
 
         $userManager->insertUser($firstName, $lastName, $email, $password);
-
-        // $_SESSION["email"] = $email;
-        // $_SESSION["firstName"] = $firstName;
-        // $_SESSION["lastName"] = $lastName;
 
         header('Location: ?controller=myAccount&action=signIn');
     }
