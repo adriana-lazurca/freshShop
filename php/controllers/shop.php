@@ -5,7 +5,7 @@ class Shop extends Controller
     public function index()
     {
         require_once "./php/models/ProductManager.php";
-        
+
         $productManager = new ProductManager;
         $products = $productManager->getProducts();
 
@@ -19,6 +19,12 @@ class Shop extends Controller
 
     public function cart()
     {
+        require_once "./php/models/ProductManager.php";
+        require_once "./php/models/CartManager.php";
+
+        $productManager = new ProductManager;
+        $products = $productManager->getProducts();
+
         require_once "./php/views/shop/cart.php";
     }
 
