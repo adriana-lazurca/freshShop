@@ -16,14 +16,13 @@ class Shop extends Controller
     {
         require_once "./php/views/shop/shop-detail.php";
     }
-
+    
     public function cart()
     {
-        require_once "./php/models/ProductManager.php";
         require_once "./php/models/CartManager.php";
 
-        $productManager = new ProductManager;
-        $products = $productManager->getProducts();
+        $cartManager = new CartManager();
+        $cartItems = $cartManager->getCartItems();
 
         require_once "./php/views/shop/cart.php";
     }

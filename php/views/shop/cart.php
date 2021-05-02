@@ -36,24 +36,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($products as $product) { ?>
+                            <?php foreach ($cartItems as $cartItem) { ?>
                                 <tr>
                                     <td class="thumbnail-img">
                                         <a href="#">
-                                            <img class="img-fluid" src="<?= $product->imageUrl ?>" alt="" />
+                                            <img class="img-fluid" src="<?= $cartItem->product->imageUrl ?>" alt="" />
                                         </a>
                                     </td>
                                     <td class="name-pr">
                                         <a href="#">
-                                            <?= $product->name ?>
+                                            <?= $cartItem->product->name ?>
                                         </a>
                                     </td>
                                     <td class="price-pr">
-                                        <p>$ <?= $product->price ?></p>
+                                        <p>$ <?= $cartItem->product->price ?></p>
                                     </td>
-                                    <td class="quantity-box"><input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text"></td>
+                                    <td class="quantity-box"><input type="number" size="4" value="<?= $cartItem->quantity ?>" min="0" step="1" class="c-input-text qty text"></td>
                                     <td class="total-pr">
-                                        <p>$ 80.0</p>
+                                        <p>$ <?= $cartItem->product->price * $cartItem->quantity ?></p>
                                     </td>
                                     <td class="remove-pr">
                                         <a href="#">
