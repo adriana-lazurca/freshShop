@@ -12,15 +12,21 @@ class Shop extends Controller
         require_once "./php/views/shop/shop.php";
     }
 
+    public function addItemToCart(int $productId)
+    {
+        require_once "./php/models/CartManager.php";
+        $cartManager = new CartManager();
+        $cartManager->addCartItem($productId);
+    }
+
     public function shopDetail()
     {
         require_once "./php/views/shop/shop-detail.php";
     }
-    
+
     public function cart()
     {
         require_once "./php/models/CartManager.php";
-
         $cartManager = new CartManager();
         $cartItems = $cartManager->getCartItems();
 
