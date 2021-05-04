@@ -56,7 +56,7 @@
                                         <p>$ <?= $cartItem->product->price * $cartItem->quantity ?></p>
                                     </td>
                                     <td class="remove-pr">
-                                        <a href="?controller=shop&action=remove&productId=<?=$cartItem->product->id?>">
+                                        <a href="?controller=shop&action=remove&productId=<?= $cartItem->product->id?>">
                                             <i class="fas fa-times"></i>
                                         </a>
                                     </td>

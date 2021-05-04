@@ -7,12 +7,11 @@ class CartManager
 
     public function getCartItems()
     {
-        $product = new Product(1, "Carrots", 11.5, 'images/img-pro-01.jpg', ProductStatus::SALE);
-        $product2 = new Product(2, "Tomatoes", 12, 'images/img-pro-02.jpg', ProductStatus::NEW);
-        $cartItem = new CartItem($product, 2);
-        $cartItem2 = new CartItem($product2, 2);
-
-        return [$cartItem, $cartItem2];
+        // 1. take data from cookie
+        $cookieValue = isset($_COOKIE[$this->cookieName]) ? $_COOKIE[$this->cookieName] : "[]";
+        $data = json_decode($cookieValue); // list of cartItem
+        
+        return $data;
     }
 
     public function addCartItem(int $productId)
