@@ -17,12 +17,23 @@ class CartManager
     {
         // 1. iau datele din cookie
         $cookieValue = isset($_COOKIE[$this->cookieName]) ? $_COOKIE[$this->cookieName] : "[]";
-        $data = json_decode($cookieValue, true);
+        $data = json_decode($cookieValue, true); // list of cartItem
 
         // 2. modific datele - lucru cu array
-        $cartItem = new CartItem($productId, 1);
-        array_push($data, $cartItem);
+        // $idColumn = array_column($data, 'productId');
+        // $isInArray = in_array($productId, $idColumn);
+        $productsWithMatchId = array_filter($data, function ($cartItem) use ($productId) {
+            return $cartItem['productId'] == $productId;
+        });
+        $isInArray = count($productsWithMatchId) > 0;
 
+        if ($isInArray) {
+            $cartItem = $productsWithMatchId[0];
+            $cartItem['quantity'] += 1;
+        } else {
+            $cartItem = new CartItem($productId, 1);
+            array_push($data, $cartItem);
+        }
         // 3. salvez datele modificate in cookie 
         $dataString = json_encode($data);
         setcookie($this->cookieName, $dataString);
