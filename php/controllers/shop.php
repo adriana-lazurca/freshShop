@@ -17,6 +17,7 @@ class Shop extends Controller
         require_once "./php/models/CartManager.php";
         $cartManager = new CartManager();
         $cartManager->addCartItem($productId);
+        header('Location: ?controller=shop');
     }
 
     public function shopDetail()
@@ -32,6 +33,14 @@ class Shop extends Controller
 
         require_once "./php/views/shop/cart.php";
     }
+
+    public function remove(int $productId)
+    {
+        require_once "./php/models/CartManager.php";
+        $cartManager = new CartManager();
+        $cartManager->removeCartItem($productId);
+    }
+
 
     public function checkout()
     {
